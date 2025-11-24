@@ -29,6 +29,7 @@ Design custom slides, charts, images, tables, and templates programmatically - n
 ### Full-Featured
 
 - Create all major slide objects: **text, tables, shapes, images, charts**, and more
+- Add professional **animations** to any object - entrance, emphasis, exit, and path animations
 - Define custom **Slide Masters** for consistent academic or corporate branding
 - Supports **SVGs**, **animated GIFs**, **YouTube embeds**, **RTL text**, and **Asian fonts**
 
@@ -154,6 +155,125 @@ pres.writeFile();
 ```
 
 That's really all there is to it!
+
+## ✨ Add Professional Animations
+
+Bring your presentations to life with entrance, emphasis, exit, and path animations - just like PowerPoint's built-in effects.
+
+### Basic Animation Example
+
+```javascript
+let pptx = new PptxGenJS();
+let slide = pptx.addSlide();
+
+// Add text with a simple fade-in animation
+slide.addText("Hello World!", {
+  x: 1,
+  y: 1,
+  fontSize: 36,
+  animation: "fadein"
+});
+
+// Add a shape with a fly-in animation from the left
+slide.addShape(pptx.shapes.RECTANGLE, {
+  x: 2,
+  y: 3,
+  w: 3,
+  h: 2,
+  fill: { color: "4472C4" },
+  animation: {
+    type: "flyin",
+    direction: "left",
+    duration: 1000
+  }
+});
+
+pptx.writeFile();
+```
+
+### Advanced Animation Configuration
+
+```javascript
+// Image with custom animation timing
+slide.addImage({
+  path: "logo.png",
+  x: 1,
+  y: 1,
+  w: 2,
+  h: 2,
+  animation: {
+    type: "zoom",
+    direction: "slideCenter",
+    duration: 1500,
+    delay: 500,
+    trigger: "afterPrevious"
+  }
+});
+
+// Table with emphasis animation
+slide.addTable(tableData, {
+  x: 1,
+  y: 3,
+  w: 8,
+  animation: {
+    type: "pulse",
+    duration: 800
+  }
+});
+```
+
+### Available Animation Types
+
+**Entrance Animations:**
+- `appear`, `fadein`, `flyin`, `floatin`, `split`, `wipe`, `shape`, `wheel`, `randombars`, `zoom`, `grow`, `growandturn`, `swivel`, `bounce`
+
+**Emphasis Animations:**
+- `pulse`, `colorpulse`, `teeter`, `spin`, `growshrink`, `desaturate`, `darken`, `lighten`, `transparency`, `objectcolor`, `complementarycolor`, `linecolor`, `fillcolor`
+
+**Exit Animations:**
+- `disappear`, `fadeout`, `flyout`, `floatout`, `splitexit`, `wipeexit`, `shapeexit`, `wheelexit`, `randombarsexit`, `shrinkandturn`, `zoomexit`, `swivelexit`, `bounceexit`
+
+**Path Animations:**
+- `pathdown`, `patharcdown`, `pathturnright`, `pathcircle`, `pathzigzag`
+
+### Animation Options
+
+Many animations support additional options:
+
+```javascript
+// Direction options (for fly, float, split, wipe, zoom)
+animation: { type: "flyin", direction: "top" | "bottom" | "left" | "right" | "topLeft" | "topRight" | "bottomLeft" | "bottomRight" }
+
+// Shape options (for shape animations)
+animation: { type: "shape", shape: "circle" | "box" | "diamond" | "plus", direction: "in" | "out" }
+
+// Wheel spokes (for wheel animations)
+animation: { type: "wheel", spokes: 1 | 2 | 3 | 4 | 8 }
+
+// Spin options
+animation: { type: "spin", direction: "clockwise" | "counterClockwise", amount: "quarterSpin" | "halfSpin" | "fullSpin" | "twoSpins" }
+
+// Color options (for color animations)
+animation: { type: "colorpulse", color: "FFFF00" }
+
+// Transparency levels
+animation: { type: "transparency", level: 25 | 50 | 75 | 100 }
+```
+
+### Timing and Triggers
+
+Control when animations play:
+
+```javascript
+animation: {
+  type: "fadein",
+  duration: 1000,        // Animation duration in milliseconds
+  delay: 500,            // Delay before animation starts
+  trigger: "onClick"     // "onClick" | "withPrevious" | "afterPrevious"
+}
+```
+
+[View Full Animation Documentation](https://gitbrent.github.io/PptxGenJS/docs/api-animations.html)
 
 ## 💥 HTML-to-PowerPoint Magic
 
