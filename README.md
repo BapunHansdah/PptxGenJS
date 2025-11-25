@@ -225,7 +225,7 @@ slide.addTable(tableData, {
 ### Available Animation Types
 
 **Entrance Animations:**
-- `appear`, `fadein`, `flyin`, `floatin`, `split`, `wipe`, `shape`, `wheel`, `randombars`, `zoom`, `grow`, `growandturn`, `swivel`, `bounce`
+- `appear`, `fadein`, `flyin`, `floatin`, `split`, `wipe`, `shape`, `wheel`, `randombars`, `zoom`, `growandturn`, `swivel`, `bounce`
 
 **Emphasis Animations:**
 - `pulse`, `colorpulse`, `teeter`, `spin`, `growshrink`, `desaturate`, `darken`, `lighten`, `transparency`, `objectcolor`, `complementarycolor`, `linecolor`, `fillcolor`
