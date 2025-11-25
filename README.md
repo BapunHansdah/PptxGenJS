@@ -273,7 +273,7 @@ animation: {
 }
 ```
 
-[View Full Animation Documentation](https://gitbrent.github.io/PptxGenJS/docs/api-animations.html)
+[View Full Animation DEMO](https://pptxgenjs-animation.vercel.app)
 
 ## 💥 HTML-to-PowerPoint Magic
 

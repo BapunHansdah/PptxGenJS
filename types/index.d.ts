@@ -925,7 +925,7 @@ declare namespace PptxGenJS {
 
 	export type EntranceAnimation = 
 	| 'appear' | 'fadein' | 'flyin' | 'floatin' | 'split' | 'wipe' 
-	| 'shape' | 'wheel' | 'randombars' | 'zoom' | 'grow' 
+	| 'shape' | 'wheel' | 'randombars' | 'zoom' 
 	| 'growandturn' | 'swivel' | 'bounce'
 
 	export type EmphasisAnimation = 

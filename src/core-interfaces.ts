@@ -99,7 +99,7 @@ export type AnimationTrigger = 'onClick' | 'withPrevious' | 'afterPrevious'
 
 export type EntranceAnimation = 
   | 'appear' | 'fadein' | 'flyin' | 'floatin' | 'split' | 'wipe' 
-  | 'shape' | 'wheel' | 'randombars' | 'zoom' | 'grow' 
+  | 'shape' | 'wheel' | 'randombars' | 'zoom' 
   | 'growandturn' | 'swivel' | 'bounce'
 
 export type EmphasisAnimation = 
@@ -117,12 +117,6 @@ export type PathAnimation =
 
 export type AnimationType = EntranceAnimation | EmphasisAnimation | ExitAnimation | PathAnimation
 
-// Direction options for different animation types
-// export type FlyDirection = 
-//   | 'fromBottom' | 'fromTop' | 'fromLeft' | 'fromRight'
-//   | 'fromTopLeft' | 'fromTopRight' | 'fromBottomLeft' | 'fromBottomRight'
-//   | 'toBottom' | 'toTop' | 'toLeft' | 'toRight'
-//   | 'toTopLeft' | 'toTopRight' | 'toBottomLeft' | 'toBottomRight'
 
 export type FlyDirection =
   | 'top' | 'bottom' | 'left' | 'right'
